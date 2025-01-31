@@ -55,11 +55,11 @@ def profile_info(message):
             following = profile.followees
             profile_pic_url = profile.profile_pic_url
 
-            caption = f"📸 **Instagram Profil Bilgileri**\n\n"
-            caption += f"👤 **Kullanıcı Adı:** {username}\n"
-            caption += f"📌 **Bio:** {instagram_bio}\n"
-            caption += f"👥 **Takipçi:** {followers}\n"
-            caption += f"🔄 **Takip Edilen:** {following}\n"
+            caption = f"📸 Instagram Profil Bilgileri\n\n"
+            caption += f"👤 Kullanıcı Adı: {username}\n"
+            caption += f"📌 Bio: {instagram_bio}\n"
+            caption += f"👥 Takipçi: {followers}\n"
+            caption += f"🔄 Takip Edilen: {following}\n"
 
             instagram_url = f"https://www.instagram.com/{username}"
             instagram_button = types.InlineKeyboardMarkup()
@@ -81,12 +81,12 @@ def profile_info(message):
             github_following = github_data.get("following", 0)
             github_profile_pic = github_data.get("avatar_url")
 
-            caption = f"🐙 **GitHub Profil Bilgileri**\n\n"
-            caption += f"👤 **İsim:** {github_name}\n"
-            caption += f"📌 **Bio:** {github_bio}\n"
-            caption += f"📁 **Depolar:** {github_repos}\n"
-            caption += f"👥 **Takipçi:** {github_followers}\n"
-            caption += f"🔄 **Takip Edilen:** {github_following}\n"
+            caption = f"🐙 GitHub Profil Bilgileri\n\n"
+            caption += f"👤 İsim: {github_name}\n"
+            caption += f"📌 Bio: {github_bio}\n"
+            caption += f"📁 Depolar: {github_repos}\n"
+            caption += f"👥 Takipçi: {github_followers}\n"
+            caption += f"🔄 Takip Edilen: {github_following}\n"
 
             github_button = types.InlineKeyboardMarkup()
             github_button.add(types.InlineKeyboardButton(text="🐙 GitHub Profiline Git", url=f"https://github.com/{username}"))
@@ -106,7 +106,7 @@ def profile_info(message):
         bot.send_message(message.chat.id, "🔗 **Diğer Platformlar İçin:**", reply_markup=keyboard)
 
     except Exception as e:
-        bot.reply_to(message, "⚠ **Kullanım:** /rave [Kullanıcı Adı]")
+        bot.reply_to(message, "⚠ Kullanım: /rave [Kullanıcı Adı]")
 
 # Botu başlat
 print("Bot çalışıyor...")
